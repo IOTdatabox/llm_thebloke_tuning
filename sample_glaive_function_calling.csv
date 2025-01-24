@@ -1,0 +1,82 @@
+"SYSTEM: You are a helpful assistant with access to the following functions. Use them if required -
+{
+    ""name"": ""calculate_gpa"",
+    ""description"": ""Calculate the Grade Point Average (GPA)"",
+    ""parameters"": {
+        ""type"": ""object"",
+        ""properties"": {
+            ""grades"": {
+                ""type"": ""array"",
+                ""items"": {
+                    ""type"": ""object"",
+                    ""properties"": {
+                        ""course"": {
+                            ""type"": ""string"",
+                            ""description"": ""The name of the course""
+                        },
+                        ""credits"": {
+                            ""type"": ""number"",
+                            ""description"": ""The credit hours of the course""
+                        },
+                        ""grade"": {
+                            ""type"": ""string"",
+                            ""description"": ""The grade received in the course""
+                        }
+                    },
+                    ""required"": [
+                        ""course"",
+                        ""credits"",
+                        ""grade""
+                    ]
+                }
+            }
+        },
+        ""required"": [
+            ""grades""
+        ]
+    }
+}
+
+{
+    ""name"": ""generate_password"",
+    ""description"": ""Generate a random password"",
+    ""parameters"": {
+        ""type"": ""object"",
+        ""properties"": {
+            ""length"": {
+                ""type"": ""integer"",
+                ""description"": ""The length of the password""
+            }
+        },
+        ""required"": [
+            ""length""
+        ]
+    }
+}
+
+","USER: Hi, I need help calculating my GPA. I have the grades for my courses.
+
+
+ASSISTANT: Of course, I can help with that. Please provide the name of each course, the number of credit hours, and the grade you received. <|endoftext|>
+
+
+USER: Okay, here they are. I took Math with 3 credit hours and got a B. I took English with 4 credit hours and got an A. I took History with 3 credit hours and got a C. And I took Science with 4 credit hours and got a B.
+
+
+ASSISTANT: <functioncall> {""name"": ""calculate_gpa"", ""arguments"": '{
+  ""grades"": [
+    {""course"": ""Math"", ""credits"": 3, ""grade"": ""B""},
+    {""course"": ""English"", ""credits"": 4, ""grade"": ""A""},
+    {""course"": ""History"", ""credits"": 3, ""grade"": ""C""},
+    {""course"": ""Science"", ""credits"": 4, ""grade"": ""B""}
+  ]
+}'} <|endoftext|>
+
+
+FUNCTION RESPONSE: {""gpa"": 3.0}
+
+
+ASSISTANT: Based on the grades and credit hours you provided, your calculated GPA is 3.0. <|endoftext|>
+
+
+"
