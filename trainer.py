@@ -88,7 +88,7 @@ def load_and_prepare_datasets(data_dir="bitagent.data/samples"):
 
 def train():
     # Load model and tokenizer
-    model_name = "thesven/Mistral-7B-Instruct-v0.3-GPTQ"
+    model_name = "TheBloke/Mistral-7B-Instruct-v0.2-AWQ"
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
